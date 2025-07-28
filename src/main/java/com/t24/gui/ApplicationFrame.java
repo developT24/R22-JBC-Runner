@@ -15,7 +15,7 @@ import com.t24.pacs.ExecuteJBCRoutine;
 /**
  * TODO: This program will accept jBC routine name from the user and executes it.
  *
- * @author bsauravkumar@temenos.com
+ * @author
  *
  */
 public class ApplicationFrame {
