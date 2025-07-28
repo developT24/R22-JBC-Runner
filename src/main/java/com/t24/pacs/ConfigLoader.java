@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 /**
  * TODO: This program will run load and fetch properties from config.properties file. 
  *
- * @author bsauravkumar@temenos.com
+ * @author
  *
  */
 
