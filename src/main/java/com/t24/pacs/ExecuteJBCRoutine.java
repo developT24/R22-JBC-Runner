@@ -15,7 +15,7 @@ import com.temenos.tafj.api.client.impl.TAFJRuntimeFactory;
 /**
  * TODO: This program will run jBC programs of Temenos. Can be used to perform corrections with all logic owned in jBC routine to start and end T24 session. 
  *
- * @author bsauravkumar@temenos.com
+ * @author
  *
  */
 
@@ -89,16 +89,16 @@ public class ExecuteJBCRoutine {
 
         final String TAFJ_HOME = ConfigLoader.getPropertyValue(properties, "tafj.home");
         logger.debug("Creating T24 context");
-        String paramString = TAFJ_HOME + "\\conf\\tafj.properties";
+        String tafjProperties = ConfigLoader.getPropertyValue(properties, "tafj.property.name");
+        if (tafjProperties.isEmpty())
+                tafjProperties = "tafj.properties";
+        
+        String paramString = TAFJ_HOME + "\\conf\\" + tafjProperties;
         T24Context ctx = new T24Context(paramString);
 
         logger.debug("T24 context created");
         TAFJRuntime runtime = TAFJRuntimeFactory.getTAFJRuntime();
         try {
-            String tafjProperties = ConfigLoader.getPropertyValue(properties, "tafj.property.name");
-            if (tafjProperties.isEmpty())
-                tafjProperties = "tafj.properties";
-            
             logger.debug("Invoking " + routineName);
             logger.debug("Initializing runtime at " + TAFJ_HOME + " and file " + tafjProperties);
             
