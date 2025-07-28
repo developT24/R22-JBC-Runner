@@ -12,7 +12,7 @@ import javax.swing.JTextArea;
  * TODO: This program will build the starting dialog screen for user with a brief introduction about the application. On clicking OK button we will proceed
  * to next screen to input the jBC routine name.
  *
- * @author bsauravkumar@temenos.com
+ * @author
  *
  */
 public class WelcomePage {
